@@ -31,7 +31,15 @@
 			compatible = "android,firmware";	/* AGNI_OREO_SYSMOUNT_MARKER */
             fstab {								/* AGNI_OREO_SYSMOUNT_MARKER */
 				compatible = "android,fstab";	/* AGNI_OREO_SYSMOUNT_MARKER */
-                system {						/* AGNI_OREO_SYSMOUNT_MARKER */
+				vendor {
+                                        compatible = "android,vendor";
+                                        dev = "/dev/block/platform/soc.0/7824900.sdhci/by-name/cust";
+                                        type = "ext4";
+                                        mnt_flags = "ro,barrier=1";
+                                        fsmgr_flags = "wait";
+                                        status = "ok";
+                                };
+				system {						/* AGNI_OREO_SYSMOUNT_MARKER */
             	    compatible = "android,system";	/* AGNI_OREO_SYSMOUNT_MARKER */
                     dev = "/dev/block/platform/soc.0/7824900.sdhci/by-name/system";	/* AGNI_OREO_SYSMOUNT_MARKER */
 					type = "ext4";				/* AGNI_OREO_SYSMOUNT_MARKER */
